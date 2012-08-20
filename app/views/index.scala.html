@@ -1,7 +1,11 @@
-@(message: String)
+@(userForm: Form[User])
 
-@main("Welcome to Play 2.0") {
-    
-    @play20.welcome(message, style = "Java")
-    
+@import helper._
+
+@main("Welcome to JigsawTest!") {
+    @form(routes.Application.login()) {
+        @inputText(userForm("username"))
+        @inputPassword(userForm("password"))
+        <input type="submit" value="Login">
+    }
 }

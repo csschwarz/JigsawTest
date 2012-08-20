@@ -1,0 +1,11 @@
+@(user: User, userForm: Form[User])
+
+@import helper._
+
+@main("Edit User Information") {
+    @form(routes.Application.doEditUser()) {
+        Username: @user.username
+        @inputText(userForm("firstName"))
+        @inputText(userForm("lastName"))
+    }
+}
