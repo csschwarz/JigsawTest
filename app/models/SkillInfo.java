@@ -22,7 +22,7 @@ public class SkillInfo extends Model {
     public static Finder<Integer, SkillInfo> find = new Finder<Integer, SkillInfo>(Integer.class, SkillInfo.class);
 
     public static List<SkillInfo> all() {
-        return find.where().findList();
+        return find.all();
     }
 
     public static List<SkillInfo> findByCategory(String category) {

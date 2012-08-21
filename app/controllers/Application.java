@@ -4,7 +4,7 @@ import models.User;
 import play.data.Form;
 import play.mvc.*;
 
-import views.html.*;
+import views.html.user.*;
 
 public class Application extends Controller {
 

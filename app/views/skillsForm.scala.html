@@ -3,7 +3,27 @@
 @import helper._
 
 @main("Select Your Skills") {
-    @for(skill <- skills) {
-        <p>@skill.name, @skill.category</p>
+    @form(routes.SkillsForm.processForm()) {
+        <table>
+            <tr>
+                <th>Skill</th>
+                <th>Don't Know It</th>
+                <th>Want to Learn It</th>
+                <th>Know It</th>
+                <th>Can Do It Alone</th>
+                <th>Can Teach It</th>
+            </tr>
+            @for(skill <- skills) {
+                <tr>
+                    <td>@skill.name</td>
+                    <td><input type="radio" name="@skill.name" value="0"></td>
+                    <td><input type="radio" name="@skill.name" value="1"></td>
+                    <td><input type="radio" name="@skill.name" value="2"></td>
+                    <td><input type="radio" name="@skill.name" value="3"></td>
+                    <td><input type="radio" name="@skill.name" value="4"></td>
+                </tr>
+            }
+        </table>
+        <input type="Submit" value="Submit">
     }
 }

@@ -21,7 +21,7 @@ public class User extends Model {
     @Required
     public String lastName;
 
-    @OneToMany(mappedBy="user")
+    @OneToMany(mappedBy="user", fetch=FetchType.LAZY)
     public List<Skill> skills;
 
     public static Finder<String, User> find = new Finder(String.class, User.class);
