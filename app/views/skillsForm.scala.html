@@ -1,0 +1,9 @@
+@(skills: List[SkillInfo])
+
+@import helper._
+
+@main("Select Your Skills") {
+    @for(skill <- skills) {
+        <p>@skill.name, @skill.category</p>
+    }
+}

@@ -1,11 +1,17 @@
-@(userForm: Form[User])
+@(loginForm: Form[Application.Login])
 
 @import helper._
 
 @main("Welcome to JigsawTest!") {
     @form(routes.Application.login()) {
-        @inputText(userForm("username"))
-        @inputPassword(userForm("password"))
+        @if(flash.contains("error")) {
+            <p class="error">
+                @flash.get("error")
+            </p>
+        }
+        @inputText(loginForm("username"))
+        @inputPassword(loginForm("password"))
         <input type="submit" value="Login">
     }
+    <a href="@routes.Application.register()">Register</a>
 }

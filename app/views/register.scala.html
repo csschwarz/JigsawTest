@@ -1,0 +1,18 @@
+@(userForm: Form[User])
+
+@import helper._
+
+@main("Register") {
+    @form(routes.Application.doRegister()) {
+        @if(flash.contains("error")) {
+            <p class="error">
+                @flash.get("error")
+            </p>
+        }
+        @inputText(userForm("username"))
+        @inputPassword(userForm("password"))
+        @inputText(userForm("firstName"))
+        @inputText(userForm("lastName"))
+        <input type="Submit" value="Submit">
+    }
+}
